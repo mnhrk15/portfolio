@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Section from '../layout/Section';
 import SectionTitle from '../ui/SectionTitle';
-import { Mail, Github, Award, Briefcase, GraduationCap } from 'lucide-react';
+import { Github, Award, Briefcase, GraduationCap } from 'lucide-react';
 import FadeInWhenVisible from '../ui/FadeInWhenVisible';
 import ObfuscatedEmailLink from '../ui/ObfuscatedEmailLink';
 
