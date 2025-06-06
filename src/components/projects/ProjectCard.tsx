@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../ui/Card';
 import { Button } from '../ui/Button';
 import { Project } from '@/data/projects';
+import { ArrowRight } from 'lucide-react';
 
 interface ProjectCardProps {
   project: Project;
@@ -11,7 +12,7 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, onViewDetails }) => {
   return (
-    <Card className="flex flex-col h-full overflow-hidden">
+    <Card className="flex flex-col h-full overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
       <CardHeader>
         <div className="relative w-full h-48 mb-4">
           <Image
@@ -36,8 +37,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onViewDetails }) => 
             ))}
           </div>
         </div>
-        <Button onClick={onViewDetails} className="w-full mt-auto">
+        <Button onClick={onViewDetails} className="w-full mt-auto group">
           詳細を見る
+          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
         </Button>
       </CardContent>
     </Card>
