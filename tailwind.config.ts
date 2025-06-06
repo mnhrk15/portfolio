@@ -10,10 +10,10 @@ const config: Config = {
     extend: {
       colors: {
         'base-white': '#FFFFFF', // 白
-        'light-gray': '#F7F7F7', // ライトグレー
+        'light-gray': '#F9FAFB', // クリーンなライトグレー (Tailwind gray-50)
         'text-main': '#374151', // ダークグレー (本文)
         'text-dark': '#111827', // 黒 (見出し)
-        'accent': '#FF7A00', // オレンジ
+        'accent': '#2563EB', // モダンな青 (Tailwind blue-600)
         'gray-border': '#E5E7EB', // 罫線
         'gray-subtext': '#6B7280', // サブテキスト
       },

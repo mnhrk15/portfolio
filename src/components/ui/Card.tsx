@@ -1,12 +1,21 @@
 import React from 'react';
+import { motion, HTMLMotionProps } from 'framer-motion';
 
-type CardProps = React.HTMLAttributes<HTMLDivElement>;
+type CardProps = HTMLMotionProps<'div'>;
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   ({ className, ...props }, ref) => {
-    const cardClasses = `bg-base-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out ${className}`;
+    const cardClasses = `bg-base-white rounded-lg shadow-md ${className}`;
     
-    return <div ref={ref} className={cardClasses} {...props} />;
+    return (
+      <motion.div
+        ref={ref}
+        className={cardClasses}
+        whileHover={{ y: -5, boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)" }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        {...props}
+      />
+    );
   }
 );
 Card.displayName = 'Card';

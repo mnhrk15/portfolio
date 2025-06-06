@@ -12,15 +12,15 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, onViewDetails }) => {
   return (
-    <Card className="flex flex-col h-full overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+    <Card className="flex flex-col h-full overflow-hidden group">
       <CardHeader>
-        <div className="relative w-full h-48 mb-4">
+        <div className="relative w-full h-48 mb-4 overflow-hidden rounded-t-lg">
           <Image
             src={project.mainImage}
             alt={project.title}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="rounded-t-lg object-cover"
+            className="object-cover transition-transform duration-300 group-hover:scale-110"
           />
         </div>
         <CardTitle className="font-montserrat text-lg">{project.title}</CardTitle>

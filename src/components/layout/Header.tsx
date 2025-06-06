@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,11 +37,19 @@ const Header = () => {
         </Link>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-6">
+        <nav className="hidden md:flex gap-6 items-center">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="text-sm font-medium text-text-main hover:text-accent transition-colors">
+            <motion.div key={link.href} className="relative">
+              <Link href={link.href} className="text-sm font-medium text-text-main hover:text-accent transition-colors pb-1">
                 {link.label}
-            </Link>
+              </Link>
+              <motion.div 
+                className="absolute bottom-0 left-0 h-0.5 bg-accent"
+                initial={{ width: 0 }}
+                whileHover={{ width: '100%' }}
+                transition={{ duration: 0.3 }}
+              />
+            </motion.div>
           ))}
         </nav>
 
@@ -55,23 +64,31 @@ const Header = () => {
       </div>
 
       {/* Mobile Navigation Menu */}
-      {isOpen && (
-        <nav className="md:hidden bg-base-white">
-          <ul className="flex flex-col items-center px-4 py-2">
-            {navLinks.map((link) => (
-              <li key={link.href} className="w-full">
-                <Link 
-                  href={link.href} 
-                  onClick={() => setIsOpen(false)}
-                  className="block w-full text-center py-3 text-text-main hover:bg-light-gray hover:text-accent transition-colors rounded-md"
-                >
-                    {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.nav 
+            className="md:hidden bg-base-white shadow-md"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+          >
+            <ul className="flex flex-col items-center px-4 py-2">
+              {navLinks.map((link) => (
+                <li key={link.href} className="w-full">
+                  <Link 
+                    href={link.href} 
+                    onClick={() => setIsOpen(false)}
+                    className="block w-full text-center py-3 text-text-main hover:bg-light-gray hover:text-accent transition-colors rounded-md"
+                  >
+                      {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
