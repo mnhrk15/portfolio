@@ -26,9 +26,9 @@ const AboutSection = () => {
           <div className="space-y-3 text-sm">
             <a href="mailto:hiraku.dev@example.com" className="flex items-center gap-3 hover:text-accent">
               <Mail size={18} />
-              <span>hiraku.dev@example.com</span>
+              <span>mnhrk.jh15@gmail.com</span>
             </a>
-            <a href="https://github.com/example" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-accent">
+            <a href="https://github.com/mnhrk15" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-accent">
               <Github size={18} />
               <span>GitHub Profile</span>
             </a>
@@ -54,7 +54,7 @@ const AboutSection = () => {
             </h4>
             <div className="text-sm border-l-2 border-accent pl-4">
               <p className="font-bold">美容室集客支援ベンチャー企業</p>
-              <p className="text-xs text-gray-subtext">[インターンシップ期間]</p>
+              <p className="text-xs text-gray-subtext">2023年3月 ~ 現在</p>
               <p className="mt-1">
                 AIを活用した社内業務効率化アプリや、クライアントである美容室向けの業務効率化ツールを開発。技術者がいない環境で自走し、現場のニーズヒアリングから要件定義、実装、効果測定までを担当しました。
               </p>
@@ -67,8 +67,9 @@ const AboutSection = () => {
               保有資格
             </h4>
             <ul className="list-disc list-inside text-sm space-y-1">
-              <li>応用情報技術者</li>
-              <li>基本情報技術者</li>
+              <li>基本情報技術者 (2022年5月)</li>
+              <li>TOEIC L&R Test 755点 (2024年4月)</li>
+              <li>応用情報技術者 (2024年12月)</li>
             </ul>
           </div>
           
@@ -78,8 +79,8 @@ const AboutSection = () => {
               学歴
             </h4>
             <ul className="list-disc list-inside text-sm space-y-1">
-              <li>[大学名] [学部名] [学科名] (卒業予定: [卒業予定年月])</li>
-              <li>[高校名] (卒業)</li>
+              <li>九州工業大学 大学院 情報工学府 情報工学専攻 修士課程 (卒業予定: 2027年3月)</li>
+              <li>九州工業大学 情報工学部 情報工学科 学士課程 (卒業: 2025年3月)</li>
             </ul>
           </div>
 
