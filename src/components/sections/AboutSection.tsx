@@ -4,6 +4,7 @@ import Section from '../layout/Section';
 import SectionTitle from '../ui/SectionTitle';
 import { Mail, Github, Award, Briefcase, GraduationCap } from 'lucide-react';
 import FadeInWhenVisible from '../ui/FadeInWhenVisible';
+import ObfuscatedEmailLink from '../ui/ObfuscatedEmailLink';
 
 const AboutSection = () => {
   return (
@@ -26,10 +27,7 @@ const AboutSection = () => {
             </div>
             
             <div className="space-y-3 text-sm">
-              <a href="mailto:hiraku.dev@example.com" className="flex items-center gap-3 hover:text-accent">
-                <Mail size={18} />
-                <span>mnhrk.jh15@gmail.com</span>
-              </a>
+              <ObfuscatedEmailLink user="mnhrk.jh15" domain="gmail" tld="com" />
               <a href="https://github.com/mnhrk15" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-accent">
                 <Github size={18} />
                 <span>GitHub Profile</span>
