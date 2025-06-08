@@ -16,7 +16,7 @@ const AboutSection = () => {
           <div className="md:col-span-1 space-y-6">
             <div className="flex flex-col items-center text-center">
               <Image 
-                src="/images/profile-placeholder.png" 
+                src="/images/profile.png" 
                 alt="Hiraku"
                 width={128}
                 height={128}
@@ -68,7 +68,7 @@ const AboutSection = () => {
               </h4>
               <ul className="list-disc list-inside text-sm space-y-1">
                 <li>基本情報技術者 (2022年5月)</li>
-                <li>TOEIC L&R Test 755点 (2024年4月)</li>
+                <li>TOEIC L&R Test 755点 (2024年3月)</li>
                 <li>応用情報技術者 (2024年12月)</li>
               </ul>
             </div>
@@ -79,8 +79,8 @@ const AboutSection = () => {
                 学歴
               </h4>
               <ul className="list-disc list-inside text-sm space-y-1">
-                <li>九州工業大学 大学院 情報工学府 情報工学専攻 修士課程 (卒業予定: 2027年3月)</li>
                 <li>九州工業大学 情報工学部 情報工学科 学士課程 (卒業: 2025年3月)</li>
+                <li>九州工業大学 大学院 情報工学府 情報創成工学専攻 博士前期課程 (卒業予定: 2027年3月)</li>
               </ul>
             </div>
 
