@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Section from '../layout/Section';
 import SectionTitle from '../ui/SectionTitle';
-import { Github, Award, Briefcase, GraduationCap } from 'lucide-react';
+import { Github, Award, Briefcase, GraduationCap, User } from 'lucide-react';
 import FadeInWhenVisible from '../ui/FadeInWhenVisible';
 import ObfuscatedEmailLink from '../ui/ObfuscatedEmailLink';
 import { profileData } from '@/data/profile';
@@ -44,7 +44,7 @@ const AboutSection = () => {
           <div className="md:col-span-2 space-y-8">
             <div>
               <h4 className="flex items-center text-xl font-bold font-montserrat mb-3">
-                <Briefcase size={20} className="mr-2 text-accent" />
+                <User size={20} className="mr-2 text-accent" />
                 自己PR
               </h4>
               <p className="text-sm leading-relaxed">

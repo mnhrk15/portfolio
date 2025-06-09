@@ -71,7 +71,7 @@ const HeroSection = () => {
           className="text-lg md:text-xl text-text-main mb-8 max-w-2xl mx-auto"
           variants={itemVariants}
         >
-          AIを活用した問題解決で、ビジネスの課題を革新します。
+          AIを活用して、ビジネス課題を解決するエンジニアを目指しています。
         </motion.p>
         <motion.p 
           className="font-bold text-xl font-montserrat text-text-dark"

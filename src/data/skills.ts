@@ -23,16 +23,19 @@ export const skillsData: SkillCategory[] = [
     title: "Frameworks & Libraries",
     skills: [
       { name: "Flask"},
-      { name: "Pandas" },
-      { name: "Pydantic" },
-      { name: "BeautifulSoup" },
-      { name: "openpyxl" },
-      { name: "PyQt6" },
       { name: "Playwright" },
       { name: "Requests" },
-      { name: "Selenium" },
-      { name: "NumPy" },
-      { name: "Streamlit" }
+      { name: "BeautifulSoup" },
+      { name: "Docker" },
+      { name: "Streamlit" },
+      { name: "Pandas" },
+      { name: "Httpx" },
+      { name: "Openpyxl" },
+      { name: "Celery" },
+      { name: "Redis" },
+      { name: "Pillow" },
+      { name: "Numpy" },
+      { name: "Tqdm" }
     ],
   },
   {
