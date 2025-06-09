@@ -22,8 +22,8 @@ const AboutSection = () => {
                 height={128}
                 className="w-32 h-32 rounded-full mb-4 object-cover"
               />
-              <h3 className="text-2xl font-bold font-montserrat text-text-dark">Hiraku</h3>
-              <p className="text-text-main">AI-Driven Developer</p>
+              <h3 className="text-2xl font-bold font-montserrat text-text-dark">峯 陽楽</h3>
+              <p className="text-text-main">Mine Hiraku</p>
             </div>
             
             <div className="space-y-3 text-sm">

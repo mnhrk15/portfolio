@@ -77,7 +77,7 @@ const HeroSection = () => {
           className="font-bold text-xl font-montserrat text-text-dark"
           variants={itemVariants}
         >
-          Hiraku
+          Mine Hiraku
         </motion.p>
       </motion.div>
       
