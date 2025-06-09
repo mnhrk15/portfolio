@@ -37,7 +37,7 @@ export const projectsData: Project[] = [
     ],
     challenge: "ブログ記事の作成、特にSEOを意識した質の高いコンテンツを継続的に制作することは、多くの時間と手間を要する大きな課題でした。",
     solution: "Google Gemini APIを用いて、画像からSEOに最適化された記事を自動生成します。さらにPlaywrightを介してHotPepperBeautyの管理画面に自動でログインし、記事を下書き保存することで、投稿プロセスを完全に自動化しました。",
-    result: "記事1本あたりの作成時間を約2時間からわずか5分へと大幅に短縮（95%以上削減）し、コンテンツの量産化と質の向上を両立させました。",
+    result: "記事1本あたりの作成時間を約30分以上からわずか5分へと大幅に短縮（95%以上削減）し、コンテンツの量産化と質の向上を両立させました。",
     techStack: ["Python", "Flask", "Playwright", "Google Gemini API", "Docker"],
     githubUrl: "https://github.com/mnhrk15/hpb-blog-automation",
   },
