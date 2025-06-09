@@ -20,9 +20,9 @@ const ProjectsSection = () => {
   };
 
   return (
-    <Section id="projects" className="bg-base-white rounded-lg shadow-sm">
+    <Section id="projects" className="bg-white rounded-xl shadow-sm border-0">
       <SectionTitle>Projects</SectionTitle>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projectsData.map((project, index) => (
           <FadeInWhenVisible key={project.id} delay={index * 0.1}>
             <ProjectCard

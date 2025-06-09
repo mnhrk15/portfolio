@@ -39,24 +39,25 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }) => {
 
   return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md transition-all duration-300"
       onClick={onClose}
     >
       <div
         ref={modalRef}
-        className="relative m-4 w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-base-white rounded-lg shadow-xl"
+        className="relative m-4 w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white rounded-xl shadow-2xl border-0"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="sticky top-0 flex items-center justify-between p-4 border-b bg-base-white">
-            <h2 className="text-xl font-bold font-montserrat">{title}</h2>
+        <div className="sticky top-0 flex items-center justify-between p-6 border-b border-gray-200 bg-white z-10 rounded-t-xl">
+            <h2 className="text-xl font-bold font-montserrat text-gray-900">{title}</h2>
             <button
             onClick={onClose}
-            className="p-1 rounded-full text-gray-subtext hover:bg-light-gray hover:text-text-main"
+            className="p-2 rounded-full text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-all duration-200"
+            aria-label="モーダルを閉じる"
             >
-            <X size={24} />
+            <X size={20} />
             </button>
         </div>
-        <div className="p-6">
+        <div className="p-6 bg-white text-gray-900">
             {children}
         </div>
       </div>

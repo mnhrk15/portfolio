@@ -5,14 +5,17 @@ type CardProps = HTMLMotionProps<'div'>;
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   ({ className, ...props }, ref) => {
-    const cardClasses = `bg-base-white rounded-lg shadow-md ${className}`;
+    const cardClasses = `bg-white rounded-xl shadow-sm border-0 ${className}`;
     
     return (
       <motion.div
         ref={ref}
         className={cardClasses}
-        whileHover={{ y: -5, boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)" }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
+        whileHover={{ 
+          y: -2, 
+          boxShadow: "0 8px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 10px -6px rgba(0, 0, 0, 0.1)" 
+        }}
+        transition={{ duration: 0.2, ease: "easeInOut" }}
         {...props}
       />
     );
@@ -50,7 +53,7 @@ const CardDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
-    className={`text-sm text-gray-subtext ${className}`}
+    className={`text-sm text-gray-600 ${className}`}
     {...props}
   />
 ));

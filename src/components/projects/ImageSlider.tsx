@@ -29,12 +29,16 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ screenshots }) => {
   };
 
   if (!screenshots || screenshots.length === 0) {
-    return <div className="text-center">No images to display.</div>;
+    return (
+      <div className="text-center p-8 bg-gray-50 rounded-xl border border-gray-200">
+        <p className="text-gray-700">No images to display.</p>
+      </div>
+    );
   }
   
   return (
     <div className="relative w-full">
-      <div className="relative w-full h-96 rounded-lg overflow-hidden mb-2">
+      <div className="relative w-full h-96 rounded-xl overflow-hidden mb-4 bg-gray-50 border border-gray-200">
         <Image
           src={screenshots[currentIndex].src}
           alt={screenshots[currentIndex].caption || `Screenshot ${currentIndex + 1}`}
@@ -49,13 +53,15 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ screenshots }) => {
         <>
             <button 
             onClick={goToPrevious}
-            className="absolute top-1/2 left-2 -translate-y-1/2 bg-black/30 text-white p-2 rounded-full hover:bg-black/50 transition-colors"
+            className="absolute top-1/2 left-2 -translate-y-1/2 bg-white/90 text-gray-800 p-2 rounded-full hover:bg-white transition-all duration-200 shadow-md backdrop-blur-sm border border-gray-200"
+            aria-label="前の画像"
             >
             <ChevronLeft size={24} />
             </button>
             <button 
             onClick={goToNext}
-            className="absolute top-1/2 right-2 -translate-y-1/2 bg-black/30 text-white p-2 rounded-full hover:bg-black/50 transition-colors"
+            className="absolute top-1/2 right-2 -translate-y-1/2 bg-white/90 text-gray-800 p-2 rounded-full hover:bg-white transition-all duration-200 shadow-md backdrop-blur-sm border border-gray-200"
+            aria-label="次の画像"
             >
             <ChevronRight size={24} />
             </button>
@@ -63,17 +69,24 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ screenshots }) => {
       )}
 
       {/* Caption */}
-      <div className="text-center text-sm text-gray-subtext h-8">
-        <p>{screenshots[currentIndex].caption}</p>
+      <div className="text-center px-4 py-3 bg-gray-50 rounded-lg border border-gray-200 min-h-[2.5rem] flex items-center justify-center">
+        <p className="text-sm text-gray-700 font-medium leading-relaxed">
+          {screenshots[currentIndex].caption}
+        </p>
       </div>
 
       {/* Dots Indicator */}
-      <div className="flex justify-center gap-2 mt-2">
+      <div className="flex justify-center gap-2 mt-3">
           {screenshots.map((_, index) => (
               <button 
                 key={index} 
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 rounded-full transition-colors ${currentIndex === index ? 'bg-accent' : 'bg-gray-border'}`}
+                className={`w-3 h-3 rounded-full transition-all duration-200 border ${
+                  currentIndex === index 
+                    ? 'bg-blue-600 border-blue-600 shadow-sm scale-110' 
+                    : 'bg-white border-gray-300 hover:border-blue-400 hover:bg-blue-50'
+                }`}
+                aria-label={`スクリーンショット ${index + 1} を表示`}
               />
           ))}
       </div>

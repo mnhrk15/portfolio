@@ -22,36 +22,32 @@ export const skillsData: SkillCategory[] = [
   {
     title: "Frameworks & Libraries",
     skills: [
-      { name: "Flask", experience: "実務経験: インターンでのアプリ開発" },
+      { name: "Flask"},
       { name: "Pandas" },
       { name: "Pydantic" },
       { name: "BeautifulSoup" },
-      { name: "httpx" },
       { name: "openpyxl" },
-      { name: "asyncio" },
       { name: "PyQt6" },
       { name: "Playwright" },
       { name: "Requests" },
       { name: "Selenium" },
       { name: "NumPy" },
-      { name: "PyTorch" },
+      { name: "Streamlit" }
     ],
   },
   {
     title: "AI",
     skills: [
       { name: "Google Gemini API", experience: "実務経験: インターンでのアプリ開発" },
-      { name: "LSTM", experience: "研究で使用" },
+      { name: "LSTM(Long Short-Term Memory)", experience: "研究で使用" },
     ],
   },
   {
     title: "Tools & Others",
     skills: [
-      { name: "Git", experience: "実務経験" },
-      { name: "Docker", experience: "実務経験" },
+      { name: "Git", experience: "基本的な操作は可能" },
+      { name: "Docker", experience: "基本的な操作は可能" },
       { name: "Linux", experience: "授業での学習、VPSでの使用経験" },
-      { name: "VPS", experience: "アプリデプロイ経験" },
-      { name: "AI-Driven Development", experience: "生成AIを活用したコーディング" },
     ],
   },
 ]; 
