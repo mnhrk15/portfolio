@@ -13,7 +13,6 @@ export interface Project {
   solution: string;
   result: string;
   techStack: string[];
-  githubUrl?: string;
   demoUrl?: string;
 }
 
@@ -39,7 +38,6 @@ export const projectsData: Project[] = [
     solution: "Google Gemini APIを用いて、画像からSEOに最適化された記事を自動生成します。さらにPlaywrightを介してHotPepperBeautyの管理画面に自動で操作し、投稿プロセスを完全に自動化しました。",
     result: "記事1本あたりの作成時間を約30分以上から3分へと大幅に短縮（90%以上削減）し、コンテンツの量産化と質の向上を両立させました。",
     techStack: ["Python", "Flask", "Playwright", "Requests", "BeautifulSoup", "Google Gemini API", "Docker"],
-    githubUrl: "https://github.com/mnhrk15/hpb-blog-automation",
   },
   {
     id: 2,
@@ -58,7 +56,6 @@ export const projectsData: Project[] = [
     solution: "Google Gemini APIによる画像解析でスタイルを特定し、HotPepperBeautyからリアルタイムに取得した情報と照合して、最適な組み合わせを自動で提案するアプリを構築しました。",
     result: "スタイルページ作成の効率が飛躍的に向上し、より魅力的で効果的なスタイル提案が可能になりました。これにより、顧客エンゲージメントの向上にも貢献しました。",
     techStack: ["Python", "Streamlit", "Google Gemini API", "Pandas", "BeautifulSoup", "Httpx", "Openpyxl"],
-    githubUrl: "https://github.com/mnhrk15/hairstyle_analyzer_choose",
   },
   {
     id: 3,
@@ -77,7 +74,6 @@ export const projectsData: Project[] = [
     solution: "FLUX.1 Kontext APIとGoogle Gemini APIを統合し、簡単なプロンプト入力でヘアスタイルを自在に変換できる機能を開発。これにより、様々なスタイルを低コストで迅速にシミュレーションできるようになりました。",
     result: "ヘアスタイルカタログ用の画像作成コストを大幅に削減することに大きく貢献しました。",
     techStack: ["Python", "FLUX.1 Kontext API", "Google Gemini API", "Flask", "Celery", "Redis", "Pillow", "Docker"],
-    githubUrl: "https://github.com/mnhrk15/hair-style-ai-generator",
   },
   {
     id: 4,
@@ -101,7 +97,6 @@ export const projectsData: Project[] = [
     solution: "来店データをアップロードするだけで、リピート率、顧客単価、来店サイクルなどを自動で算出し、インタラクティブなグラフで可視化するダッシュボードを開発しました。",
     result: "データに基づいた客観的な分析が可能となり、集客のボトルネックの特定や効果的なマーケティング施策の立案に貢献しました。",
     techStack: ["Python", "Flask", "Pandas", "Numpy", "Chat.js"],
-    githubUrl: "https://github.com/mnhrk15/hpb-repeat-analyzer",
   },
   {
     id: 5,
@@ -120,7 +115,6 @@ export const projectsData: Project[] = [
     solution: "requestsとBeautifulSoupを活用し、指定したエリアのサロン名、住所、電話番号といった情報を自動で収集し、Excelファイルとして一括出力するアプリを開発しました。",
     result: "営業リスト作成の時間を大幅に削減することに成功し、営業活動の生産性を大幅に向上させました。",
     techStack: ["Python", "Streamlit", "Requests", "BeautifulSoup", "Numpy", "Openpyxl", "Tqdm"],
-    githubUrl: "https://github.com/mnhrk15/HPBscraper",
   },
   {
     id: 6,
@@ -139,6 +133,5 @@ export const projectsData: Project[] = [
     solution: "Google Gemini APIを活用し、キーワードを入力するだけで、複数のタイトル案や説明文、ハッシュタグの組み合わせを瞬時に自動生成する機能を実装しました。",
     result: "スタイル情報作成にかかる時間を大幅に短縮し、より多くのスタイルを掲載できるようになったことで、集客力の向上に貢献しました。",
     techStack: ["Python", "Flask", "Google Gemini API", "Requests", "BeautifulSoup"],
-    githubUrl: "https://github.com/mnhrk15/auto-title-generator.git",
   },
 ]; 
