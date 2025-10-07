@@ -42,10 +42,10 @@ export const projectsData: Project[] = [
   {
     id: 2,
     title: "モデルスタイル情報生成アプリ",
-    shortDescription: "モデル画像からHotPepperBeautyで使えるスタイル情報を簡単作成。",
+    shortDescription: "キーワードからHotPepperBeautyで使えるスタイル情報を簡単作成。",
     mainImage: "/images/projects/style-generator_main.png",
     techIcons: ["Python", "Streamlit", "Google Gemini API", "Pandas", "BeautifulSoup", "Httpx", "Openpyxl"],
-    description: "ヘアスタイルの画像を分析し、最適なスタイリスト、クーポン、スタイルタイトルを自動的に提案するアプリケーションです。Google Gemini APIを活用した画像解析と、ホットペッパービューティーからのデータ取得を組み合わせることで、効率的なマッチングを実現します。",
+    description: "キーワードから最適なスタイル情報を自動的に提案するアプリケーションです。Google Gemini APIを活用した画像解析と、ホットペッパービューティーからのデータ取得を組み合わせることで、効率的なマッチングを実現します。",
     screenshots: [
       { src: "/images/projects/style-generator_ss_01.png", caption: "アプリのメイン画面" },
       { src: "/images/projects/style-generator_ss_02.png", caption: "実行中画面" },
