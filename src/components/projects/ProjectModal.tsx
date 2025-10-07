@@ -3,7 +3,7 @@ import Modal from '../ui/Modal';
 import ImageSlider from './ImageSlider';
 import { Project } from '@/data/projects';
 import { Button } from '../ui/Button';
-import { Github, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -53,20 +53,14 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
           </div>
         </div>
         
-        <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-200">
-          {project.githubUrl && (
-            <Button as="a" href={project.githubUrl} variant="secondary" className="flex items-center gap-2">
-              <Github size={16} />
-              GitHub
-            </Button>
-          )}
-          {project.demoUrl && (
+        {project.demoUrl && (
+          <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-200">
             <Button as="a" href={project.demoUrl} variant="secondary" className="flex items-center gap-2">
               <ExternalLink size={16} />
               デモを見る
             </Button>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </Modal>
   );
