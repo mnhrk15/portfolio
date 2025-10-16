@@ -18,10 +18,11 @@ const AboutSection = () => {
             <div className="flex flex-col items-center text-center">
               <Image 
                 src="/images/profile.png" 
-                alt="Hiraku"
+                alt="峯陽楽（Mine Hiraku）のプロフィール写真"
                 width={128}
                 height={128}
                 className="w-32 h-32 rounded-full mb-4 object-cover"
+                priority
               />
               <h3 className="text-2xl font-bold font-montserrat text-text-dark">{profileData.name.japanese}</h3>
               <p className="text-text-main">{profileData.name.english}</p>
