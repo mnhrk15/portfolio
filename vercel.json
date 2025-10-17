@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.hiraku-portfolio.site"
+        }
+      ],
+      "destination": "https://hiraku-portfolio.site/$1",
+      "permanent": true
+    }
+  ]
+}
+

@@ -3,6 +3,23 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   
+  // wwwありからwwwなしへリダイレクト
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.hiraku-portfolio.site',
+          },
+        ],
+        destination: 'https://hiraku-portfolio.site/:path*',
+        permanent: true, // 301リダイレクト
+      },
+    ];
+  },
+  
   // SEO最適化
   async headers() {
     return [
