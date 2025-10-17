@@ -34,6 +34,10 @@ const nextConfig: NextConfig = {
             key: 'X-Frame-Options',
             value: 'SAMEORIGIN'
           },
+          {
+            key: 'Link',
+            value: '<https://hiraku-portfolio.site>; rel="canonical"'
+          },
         ],
       },
     ];
