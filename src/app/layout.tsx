@@ -22,7 +22,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL("https://hiraku-portfolio.site"),
   title: "峯陽楽（Mine Hiraku）| ポートフォリオ",
-  description: "峯陽楽（みね ひらく / Mine Hiraku）のポートフォリオサイト。九州工業大学在学中。AI駆動開発で業務効率化を実現する実務経験豊富なエンジニア。Python、Google Gemini API、Flask等を使用したアプリケーション開発実績多数。基本情報技術者・応用情報技術者保有。",
+  description: "峯陽楽（みね ひらく / Mine Hiraku）のポートフォリオサイト。九州工業大学在学中。AI駆動開発で業務効率化を実現するエンジニア。Python、Google Gemini API、Flask等を使用したアプリケーション開発実績多数。基本情報技術者・応用情報技術者保有。",
   keywords: ["峯陽楽", "Mine Hiraku", "みね ひらく", "AIエンジニア", "Python開発者", "九州工業大学", "ポートフォリオ", "AI駆動開発", "Google Gemini API", "Flask", "基本情報技術者", "応用情報技術者"],
   authors: [{ name: "峯陽楽", url: "https://github.com/mnhrk15" }],
   creator: "峯陽楽",
@@ -96,7 +96,7 @@ export default function RootLayout({
     sameAs: [
       "https://github.com/mnhrk15"
     ],
-    description: "AI駆動開発で業務効率化を実現する実務経験豊富なエンジニア。Python、Google Gemini API、Flask等を使用したアプリケーション開発実績多数。"
+    description: "AI駆動開発で業務効率化を実現するエンジニア。Python、Google Gemini API、Flask等を使用したアプリケーション開発実績多数。"
   };
 
   return (
