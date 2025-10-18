@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
 
-export const alt = '峯陽楽（Mine Hiraku）| AIエンジニア ポートフォリオ'
+export const alt = '峯陽楽（Mine Hiraku）| ポートフォリオ'
 export const size = {
   width: 1200,
   height: 630,
@@ -70,7 +70,7 @@ export default async function Image() {
               marginTop: '30px',
             }}
           >
-            九州工業大学 | AIエンジニア
+            九州工業大学
           </div>
         </div>
       </div>
