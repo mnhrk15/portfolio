@@ -21,7 +21,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hiraku-portfolio.site"),
-  title: "峯陽楽（Mine Hiraku）| AIエンジニア ポートフォリオ",
+  title: "峯陽楽（Mine Hiraku）| ポートフォリオ",
   description: "峯陽楽（みね ひらく / Mine Hiraku）のポートフォリオサイト。九州工業大学在学中。AI駆動開発で業務効率化を実現する実務経験豊富なエンジニア。Python、Google Gemini API、Flask等を使用したアプリケーション開発実績多数。基本情報技術者・応用情報技術者保有。",
   keywords: ["峯陽楽", "Mine Hiraku", "みね ひらく", "AIエンジニア", "Python開発者", "九州工業大学", "ポートフォリオ", "AI駆動開発", "Google Gemini API", "Flask", "基本情報技術者", "応用情報技術者"],
   authors: [{ name: "峯陽楽", url: "https://github.com/mnhrk15" }],
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     locale: "ja_JP",
     url: "https://hiraku-portfolio.site",
     siteName: "峯陽楽 ポートフォリオ",
-    title: "峯陽楽（Mine Hiraku）| AIエンジニア ポートフォリオ",
+    title: "峯陽楽（Mine Hiraku）| ポートフォリオ",
     description: "峯陽楽（みね ひらく）のポートフォリオサイト。AI駆動開発で業務効率化を実現するエンジニア。九州工業大学在学中。",
     images: [
       {
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "峯陽楽（Mine Hiraku）| AIエンジニア ポートフォリオ",
+    title: "峯陽楽（Mine Hiraku）| ポートフォリオ",
     description: "AI駆動開発で業務効率化を実現するエンジニア、峯陽楽のポートフォリオサイト",
     images: ["/images/profile.png"],
     creator: "@mnhrk15",
