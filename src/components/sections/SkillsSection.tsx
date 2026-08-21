@@ -2,34 +2,20 @@ import React from 'react';
 import Section from '../layout/Section';
 import SectionTitle from '../ui/SectionTitle';
 import { skillsData } from '@/data/skills';
-import { Code, BrainCircuit, Wrench, Sparkles } from 'lucide-react';
 import FadeInWhenVisible from '../ui/FadeInWhenVisible';
-
-const categoryIcons: { [key: string]: React.ReactNode } = {
-  "AI-Driven Development": <Sparkles size={24} className="text-accent" />,
-  "Languages & Frameworks": <Code size={24} className="text-accent" />,
-  "AI / Machine Learning": <BrainCircuit size={24} className="text-accent" />,
-  "Infrastructure & Tools": <Wrench size={24} className="text-accent" />,
-};
-
 
 const SkillsSection = () => {
   return (
     <FadeInWhenVisible>
-      <Section id="skills" className="bg-base-white rounded-lg shadow-sm">
+      <Section id="skills" className="border-t border-gray-border">
         <SectionTitle>Skills</SectionTitle>
         <div className="grid md:grid-cols-2 gap-8">
           {skillsData.map((category) => (
             <div key={category.title}>
-              <div className="flex items-center mb-4">
-                <div className="mr-3">
-                  {categoryIcons[category.title] || <Code size={24} className="text-accent" />}
-                </div>
-                <h3 className="text-xl font-bold font-montserrat">{category.title}</h3>
-              </div>
+              <h3 className="text-xl font-bold text-text-dark mb-4">{category.title}</h3>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
-                  <div key={skill.name} className="bg-base-white rounded-md px-3 py-1 shadow-sm">
+                  <div key={skill.name} className="bg-base-white rounded-md px-3 py-1.5 border border-gray-border">
                     <p className="font-semibold text-sm text-text-dark">{skill.name}</p>
                     {skill.experience && <p className="text-xs text-gray-subtext">{skill.experience}</p>}
                   </div>
@@ -43,4 +29,4 @@ const SkillsSection = () => {
   );
 };
 
-export default SkillsSection; 
+export default SkillsSection;

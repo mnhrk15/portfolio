@@ -3,7 +3,7 @@ import Modal from '../ui/Modal';
 import ImageSlider from './ImageSlider';
 import { Project } from '@/data/projects';
 import { Button } from '../ui/Button';
-import { ExternalLink, Github, Wrench } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -22,26 +22,26 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
         )}
 
         <div>
-          <h3 className="font-bold text-lg font-montserrat mb-2 text-gray-900">概要</h3>
+          <h3 className="font-bold text-lg mb-2 text-text-dark">概要</h3>
           {project.period && (
-            <p className="text-xs text-gray-500 mb-2">開発期間: {project.period}</p>
+            <p className="text-xs text-gray-subtext mb-2">開発期間: {project.period}</p>
           )}
-          <p className="text-sm text-gray-700 leading-relaxed">{project.description}</p>
+          <p className="text-sm text-text-main leading-relaxed">{project.description}</p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-6">
           <div>
-            <h3 className="font-bold text-lg font-montserrat mb-2 text-gray-900">課題</h3>
-            <p className="text-sm text-gray-700 bg-gray-50 p-4 rounded-lg border border-gray-200 leading-relaxed">{project.challenge}</p>
+            <h3 className="font-bold text-lg mb-2 text-text-dark">課題</h3>
+            <p className="text-sm text-text-main bg-gray-50 p-4 rounded-lg border border-gray-border leading-relaxed">{project.challenge}</p>
           </div>
           <div>
-            <h3 className="font-bold text-lg font-montserrat mb-2 text-gray-900">解決策と成果</h3>
-            <div className="text-sm text-gray-700 bg-gray-50 p-4 rounded-lg border border-gray-200 leading-relaxed">
+            <h3 className="font-bold text-lg mb-2 text-text-dark">解決策と成果</h3>
+            <div className="text-sm text-text-main bg-gray-50 p-4 rounded-lg border border-gray-border leading-relaxed">
                 <div className="mb-2">
-                  <strong className="text-gray-900">解決策:</strong> {project.solution}
+                  <strong className="text-text-dark">解決策:</strong> {project.solution}
                 </div>
                 <div>
-                  <strong className="text-gray-900">成果:</strong> <span className="font-bold text-blue-600">{project.result}</span>
+                  <strong className="text-text-dark">成果:</strong> <span className="font-bold text-accent">{project.result}</span>
                 </div>
             </div>
           </div>
@@ -49,11 +49,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
 
         {project.highlights && project.highlights.length > 0 && (
           <div>
-            <h3 className="flex items-center font-bold text-lg font-montserrat mb-2 text-gray-900">
-              <Wrench size={18} className="mr-2 text-accent" />
-              技術的な工夫
-            </h3>
-            <ul className="text-sm text-gray-700 bg-gray-50 p-4 rounded-lg border border-gray-200 leading-relaxed list-disc list-outside pl-8 space-y-2">
+            <h3 className="font-bold text-lg mb-2 text-text-dark">技術的な工夫</h3>
+            <ul className="text-sm text-text-main bg-gray-50 p-4 rounded-lg border border-gray-border leading-relaxed list-disc list-outside pl-8 space-y-2">
               {project.highlights.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
@@ -62,18 +59,24 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
         )}
 
         <div>
-          <h3 className="font-bold text-lg font-montserrat mb-3 text-gray-900">技術スタック</h3>
+          <h3 className="font-bold text-lg mb-3 text-text-dark">技術スタック</h3>
           <div className="flex flex-wrap gap-2">
             {project.techStack.map((tech) => (
-              <span key={tech} className="bg-blue-50 text-blue-700 text-xs font-medium px-3 py-2 rounded-full border border-blue-200">
+              <span key={tech} className="bg-accent/5 text-accent text-xs font-medium px-3 py-2 rounded-md border border-accent/20">
                 {tech}
               </span>
             ))}
           </div>
         </div>
         
-        {(project.demoUrl || project.repoUrl) && (
-          <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-200">
+        {(project.serviceUrl || project.demoUrl || project.repoUrl) && (
+          <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-border">
+            {project.serviceUrl && (
+              <Button as="a" href={project.serviceUrl} variant="secondary" className="flex items-center gap-2">
+                <ExternalLink size={16} />
+                サービスサイトを見る
+              </Button>
+            )}
             {project.repoUrl && (
               <Button as="a" href={project.repoUrl} variant="secondary" className="flex items-center gap-2">
                 <Github size={16} />

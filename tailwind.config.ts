@@ -13,13 +13,13 @@ const config: Config = {
         'light-gray': '#F9FAFB', // クリーンなライトグレー (Tailwind gray-50)
         'text-main': '#374151', // ダークグレー (本文)
         'text-dark': '#111827', // 黒 (見出し)
-        'accent': '#2563EB', // モダンな青 (Tailwind blue-600)
+        'accent': '#1E3A5F', // インクネイビー
         'gray-border': '#E5E7EB', // 罫線
         'gray-subtext': '#6B7280', // サブテキスト
       },
       fontFamily: {
-        sans: ['var(--font-noto-sans-jp)', 'sans-serif'],
-        montserrat: ['var(--font-montserrat)', 'sans-serif'],
+        sans: ['var(--font-plex-sans-jp)', 'sans-serif'],
+        mono: ['var(--font-plex-mono)', 'monospace'],
       },
     },
   },

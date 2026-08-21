@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Section from '../layout/Section';
 import SectionTitle from '../ui/SectionTitle';
-import { Github, Award, Briefcase, GraduationCap, User } from 'lucide-react';
+import { Github } from 'lucide-react';
 import FadeInWhenVisible from '../ui/FadeInWhenVisible';
 import ObfuscatedEmailLink from '../ui/ObfuscatedEmailLink';
 import { profileData } from '@/data/profile';
@@ -10,29 +10,29 @@ import { profileData } from '@/data/profile';
 const AboutSection = () => {
   return (
     <FadeInWhenVisible>
-      <Section id="about" className="bg-base-white rounded-lg shadow-sm">
+      <Section id="about" className="border-t border-gray-border">
         <SectionTitle>About Me</SectionTitle>
         <div className="grid md:grid-cols-3 gap-8 md:gap-12">
           {/* Left Column: Profile */}
           <div className="md:col-span-1 space-y-6">
             <div className="flex flex-col items-center text-center">
-              <Image 
-                src="/images/profile.png" 
+              <Image
+                src="/images/profile.png"
                 alt="峯陽楽（Mine Hiraku）のプロフィール写真"
                 width={128}
                 height={128}
                 className="w-32 h-32 rounded-full mb-4 object-cover"
                 priority
               />
-              <h3 className="text-2xl font-bold font-montserrat text-text-dark">{profileData.name.japanese}</h3>
-              <p className="text-text-main">{profileData.name.english}</p>
+              <h3 className="text-2xl font-bold text-text-dark">{profileData.name.japanese}</h3>
+              <p className="font-mono text-sm text-gray-subtext">{profileData.name.english}</p>
             </div>
-            
+
             <div className="space-y-3 text-sm">
-              <ObfuscatedEmailLink 
-                user={profileData.contact.email.user} 
-                domain={profileData.contact.email.domain} 
-                tld={profileData.contact.email.tld} 
+              <ObfuscatedEmailLink
+                user={profileData.contact.email.user}
+                domain={profileData.contact.email.domain}
+                tld={profileData.contact.email.tld}
               />
               <a href={profileData.contact.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-accent">
                 <Github size={18} />
@@ -44,18 +44,16 @@ const AboutSection = () => {
           {/* Right Column: Details */}
           <div className="md:col-span-2 space-y-8">
             <div>
-              <h4 className="flex items-center text-xl font-bold font-montserrat mb-3">
-                <User size={20} className="mr-2 text-accent" />
+              <h4 className="text-xl font-bold text-text-dark mb-3">
                 自己PR
               </h4>
               <p className="text-sm leading-relaxed">
                 {profileData.bio}
               </p>
             </div>
-            
+
             <div>
-              <h4 className="flex items-center text-xl font-bold font-montserrat mb-3">
-                <Briefcase size={20} className="mr-2 text-accent" />
+              <h4 className="text-xl font-bold text-text-dark mb-3">
                 インターンシップ経験
               </h4>
               <div className="text-sm border-l-2 border-accent pl-4">
@@ -68,8 +66,7 @@ const AboutSection = () => {
             </div>
 
             <div>
-              <h4 className="flex items-center text-xl font-bold font-montserrat mb-3">
-                <Award size={20} className="mr-2 text-accent" />
+              <h4 className="text-xl font-bold text-text-dark mb-3">
                 保有資格
               </h4>
               <ul className="list-disc list-inside text-sm space-y-1">
@@ -78,10 +75,9 @@ const AboutSection = () => {
                 ))}
               </ul>
             </div>
-            
+
             <div>
-              <h4 className="flex items-center text-xl font-bold font-montserrat mb-3">
-                <GraduationCap size={20} className="mr-2 text-accent" />
+              <h4 className="text-xl font-bold text-text-dark mb-3">
                 学歴
               </h4>
               <ul className="list-disc list-inside text-sm space-y-1">
@@ -98,4 +94,4 @@ const AboutSection = () => {
   );
 };
 
-export default AboutSection; 
+export default AboutSection;

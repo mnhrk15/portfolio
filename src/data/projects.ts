@@ -18,9 +18,10 @@ export interface Project {
   techStack: string[];
   demoUrl?: string;
   repoUrl?: string; // 公開リポジトリがある場合のみ
+  serviceUrl?: string; // サービス紹介LPがある場合のみ
 }
 
-// インターン先（美容サロン集客支援ベンチャー）のアプリは非公開リポジトリのため、URLなしの概要説明のみ掲載
+// インターン先（美容サロン集客支援ベンチャー）のアプリは非公開リポジトリのため、コードURLなし（公開LPがあるものは serviceUrl を掲載）
 export const projectsData: Project[] = [
   {
     id: 1,
@@ -51,6 +52,7 @@ export const projectsData: Project[] = [
     badge: "100+サロンで実利用",
     period: "2026年3月〜現在",
     techStack: ["TypeScript", "Next.js", "React", "Supabase", "Playwright", "Gemini API", "Google Sheets API", "Docker"],
+    serviceUrl: "https://salon-post-automation.ai-beauty.tokyo/",
   },
   {
     id: 2,
@@ -82,6 +84,7 @@ export const projectsData: Project[] = [
     badge: "100+サロンで実利用",
     period: "2026年2月〜現在",
     techStack: ["TypeScript", "Next.js", "React", "Supabase", "Gemini API", "GBP API", "Playwright", "Puppeteer", "Docker"],
+    serviceUrl: "https://salon-dashboard.ai-beauty.tokyo/",
   },
   {
     id: 3,
@@ -112,6 +115,7 @@ export const projectsData: Project[] = [
     badge: "100+サロンで実利用",
     period: "2026年2月〜現在",
     techStack: ["Python", "FastAPI", "Celery", "Redis", "PostgreSQL", "React", "TypeScript", "Gemini API", "GBP API", "Meta Graph API", "Docker"],
+    serviceUrl: "https://salon-gbp.ai-beauty.tokyo/",
   },
   {
     id: 4,
@@ -141,6 +145,7 @@ export const projectsData: Project[] = [
     ],
     period: "2026年6月〜現在",
     techStack: ["Python", "FastAPI", "TypeScript", "Next.js", "Gemini API", "OpenAI API", "Google Places API", "Docker"],
+    serviceUrl: "https://salon-compass.ai-beauty.tokyo/lp",
   },
   {
     id: 5,
