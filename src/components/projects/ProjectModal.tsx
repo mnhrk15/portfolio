@@ -3,7 +3,7 @@ import Modal from '../ui/Modal';
 import ImageSlider from './ImageSlider';
 import { Project } from '@/data/projects';
 import { Button } from '../ui/Button';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Github, Wrench } from 'lucide-react';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -17,10 +17,15 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
   return (
     <Modal isOpen={isOpen} onClose={onClose} title={project.title}>
       <div className="space-y-6">
-        <ImageSlider screenshots={project.screenshots} />
-        
+        {project.screenshots.length > 0 && (
+          <ImageSlider screenshots={project.screenshots} />
+        )}
+
         <div>
           <h3 className="font-bold text-lg font-montserrat mb-2 text-gray-900">概要</h3>
+          {project.period && (
+            <p className="text-xs text-gray-500 mb-2">開発期間: {project.period}</p>
+          )}
           <p className="text-sm text-gray-700 leading-relaxed">{project.description}</p>
         </div>
         
@@ -42,6 +47,20 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
           </div>
         </div>
 
+        {project.highlights && project.highlights.length > 0 && (
+          <div>
+            <h3 className="flex items-center font-bold text-lg font-montserrat mb-2 text-gray-900">
+              <Wrench size={18} className="mr-2 text-accent" />
+              技術的な工夫
+            </h3>
+            <ul className="text-sm text-gray-700 bg-gray-50 p-4 rounded-lg border border-gray-200 leading-relaxed list-disc list-outside pl-8 space-y-2">
+              {project.highlights.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         <div>
           <h3 className="font-bold text-lg font-montserrat mb-3 text-gray-900">技術スタック</h3>
           <div className="flex flex-wrap gap-2">
@@ -53,12 +72,20 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
           </div>
         </div>
         
-        {project.demoUrl && (
+        {(project.demoUrl || project.repoUrl) && (
           <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-200">
-            <Button as="a" href={project.demoUrl} variant="secondary" className="flex items-center gap-2">
-              <ExternalLink size={16} />
-              デモを見る
-            </Button>
+            {project.repoUrl && (
+              <Button as="a" href={project.repoUrl} variant="secondary" className="flex items-center gap-2">
+                <Github size={16} />
+                GitHubで見る
+              </Button>
+            )}
+            {project.demoUrl && (
+              <Button as="a" href={project.demoUrl} variant="secondary" className="flex items-center gap-2">
+                <ExternalLink size={16} />
+                デモを見る
+              </Button>
+            )}
           </div>
         )}
       </div>

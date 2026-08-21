@@ -2,14 +2,14 @@ import React from 'react';
 import Section from '../layout/Section';
 import SectionTitle from '../ui/SectionTitle';
 import { skillsData } from '@/data/skills';
-import { Cpu, Code, BrainCircuit, Wrench } from 'lucide-react';
+import { Code, BrainCircuit, Wrench, Sparkles } from 'lucide-react';
 import FadeInWhenVisible from '../ui/FadeInWhenVisible';
 
 const categoryIcons: { [key: string]: React.ReactNode } = {
-  "Programming Languages": <Code size={24} className="text-accent" />,
-  "Frameworks & Libraries": <Cpu size={24} className="text-accent" />,
-  "AI": <BrainCircuit size={24} className="text-accent" />,
-  "Tools & Others": <Wrench size={24} className="text-accent" />,
+  "AI-Driven Development": <Sparkles size={24} className="text-accent" />,
+  "Languages & Frameworks": <Code size={24} className="text-accent" />,
+  "AI / Machine Learning": <BrainCircuit size={24} className="text-accent" />,
+  "Infrastructure & Tools": <Wrench size={24} className="text-accent" />,
 };
 
 

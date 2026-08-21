@@ -67,11 +67,11 @@ const HeroSection = () => {
         >
           AI-Driven Problem Solving
         </motion.h1>
-        <motion.p 
+        <motion.p
           className="text-lg md:text-xl text-text-main mb-8 max-w-2xl mx-auto"
           variants={itemVariants}
         >
-          AIを活用して、ビジネス課題を解決するエンジニアを目指しています。
+          生成AIを使いこなして素早く形にする開発力と、課題を要件に落とし込む力で、ビジネス課題を解決します。
         </motion.p>
         <motion.p 
           className="font-bold text-xl font-montserrat text-text-dark"

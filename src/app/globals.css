@@ -1,9 +1,7 @@
 @import "tailwindcss";
 
-@theme {
-  /*
-   * Here we can extend tailwind's theme.
-   * For this project, we are using tailwind.config.ts for configuration,
-   * so this can be left empty.
-   */
-}
+/*
+ * Tailwind v4 は tailwind.config.ts を自動で読み込まないため、
+ * @config で明示的に読み込む（カスタムカラー・フォント定義がここにある）。
+ */
+@config "../../tailwind.config.ts";

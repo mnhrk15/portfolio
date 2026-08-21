@@ -22,9 +22,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onViewDetails }) => 
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
+          {project.badge && (
+            <span className="absolute top-2 left-2 bg-accent text-white text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
+              {project.badge}
+            </span>
+          )}
         </div>
         <CardTitle className="font-montserrat text-lg text-gray-900">{project.title}</CardTitle>
-        <CardDescription className="h-10 text-gray-600">{project.shortDescription}</CardDescription>
+        <CardDescription className="min-h-10 text-gray-600">{project.shortDescription}</CardDescription>
       </CardHeader>
       <CardContent className="flex-grow flex flex-col justify-between">
         <div>

@@ -22,8 +22,8 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL("https://hiraku-portfolio.site"),
   title: "峯陽楽（Mine Hiraku）| ポートフォリオ",
-  description: "峯陽楽（みね ひらく / Mine Hiraku）のポートフォリオサイト。九州工業大学在学中。AI駆動開発で業務効率化を実現するエンジニア。Python、Google Gemini API、Flask等を使用したアプリケーション開発実績多数。基本情報技術者・応用情報技術者保有。",
-  keywords: ["峯陽楽", "Mine Hiraku", "みね ひらく", "AIエンジニア", "Python開発者", "九州工業大学", "ポートフォリオ", "AI駆動開発", "Google Gemini API", "Flask", "基本情報技術者", "応用情報技術者"],
+  description: "峯陽楽（みね ひらく / Mine Hiraku）のポートフォリオサイト。九州工業大学大学院在学中。生成AIを活用した業務効率化アプリを要件定義から開発・運用し、うち3件は100以上の美容サロンで実利用。国際会議AVEC'26フルペーパー採択。基本情報技術者・応用情報技術者保有。",
+  keywords: ["峯陽楽", "Mine Hiraku", "みね ひらく", "生成AI", "Python開発者", "九州工業大学", "ポートフォリオ", "AI駆動開発", "Google Gemini API", "Next.js", "FastAPI", "基本情報技術者", "応用情報技術者"],
   authors: [{ name: "峯陽楽", url: "https://github.com/mnhrk15" }],
   creator: "峯陽楽",
   publisher: "峯陽楽",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     url: "https://hiraku-portfolio.site",
     siteName: "峯陽楽 ポートフォリオ",
     title: "峯陽楽（Mine Hiraku）| ポートフォリオ",
-    description: "峯陽楽（みね ひらく）のポートフォリオサイト。AI駆動開発で業務効率化を実現するエンジニア。九州工業大学在学中。",
+    description: "峯陽楽（みね ひらく）のポートフォリオサイト。生成AIを活用した業務効率化アプリの開発・運用実績多数。九州工業大学大学院在学中。",
     images: [
       {
         url: "/images/profile.png",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "峯陽楽（Mine Hiraku）| ポートフォリオ",
-    description: "AI駆動開発で業務効率化を実現するエンジニア、峯陽楽のポートフォリオサイト",
+    description: "峯陽楽（みね ひらく）のポートフォリオサイト。生成AIを活用した業務効率化アプリの開発・運用実績多数。九州工業大学大学院在学中。",
     images: ["/images/profile.png"],
     creator: "@mnhrk15",
   },
@@ -92,11 +92,16 @@ export default function RootLayout({
       name: "九州工業大学",
       department: "情報工学部 知的システム工学科"
     },
-    knowsAbout: ["Python", "AI Development", "Flask", "Google Gemini API", "Machine Learning", "Web Development"],
+    affiliation: {
+      "@type": "EducationalOrganization",
+      name: "九州工業大学 大学院",
+      department: "情報工学府 情報創成工学専攻"
+    },
+    knowsAbout: ["Python", "TypeScript", "Generative AI", "Google Gemini API", "Machine Learning", "Next.js", "FastAPI", "Web Development"],
     sameAs: [
       "https://github.com/mnhrk15"
     ],
-    description: "AI駆動開発で業務効率化を実現するエンジニア。Python、Google Gemini API、Flask等を使用したアプリケーション開発実績多数。"
+    description: "生成AIを活用した業務効率化アプリを要件定義から開発・運用。うち3件は100以上の美容サロンで実利用。国際会議AVEC'26フルペーパー採択。"
   };
 
   return (

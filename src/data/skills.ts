@@ -10,47 +10,39 @@ export interface SkillCategory {
 
 export const skillsData: SkillCategory[] = [
   {
-    title: "Programming Languages",
+    title: "AI-Driven Development",
     skills: [
-      { name: "Python", experience: "実務経験: インターンでのアプリ開発、研究" },
-      { name: "C", experience: "授業での学習: 基本的なアルゴリズム実装" },
-      { name: "MATLAB", experience: "授業での学習" },
-      { name: "JavaScript", experience: "オンライン学習講座受講" },
-      { name: "GAS", experience: "インターンでのツール開発" },
+      { name: "Claude Code", experience: "実務・研究の開発全般で日常的に活用" },
+      { name: "Cursor" },
+      { name: "Codex" },
+      { name: "プロンプト設計", experience: "スキーマ検証×自動再生成など本番LLMパイプラインの設計" },
     ],
   },
   {
-    title: "Frameworks & Libraries",
+    title: "Languages & Frameworks",
     skills: [
-      { name: "Flask"},
-      { name: "Playwright" },
-      { name: "Requests" },
-      { name: "BeautifulSoup" },
-      { name: "Docker" },
-      { name: "Streamlit" },
-      { name: "Pandas" },
-      { name: "Httpx" },
-      { name: "Openpyxl" },
-      { name: "Celery" },
-      { name: "Redis" },
-      { name: "Pillow" },
-      { name: "Numpy" },
-      { name: "Tqdm" }
+      { name: "Python", experience: "実務3年以上: FastAPI / Django / Flask でのアプリ開発、研究" },
+      { name: "TypeScript", experience: "実務: Next.js / React でのWebアプリ開発" },
     ],
   },
   {
-    title: "AI",
+    title: "AI / Machine Learning",
     skills: [
-      { name: "Google Gemini API", experience: "実務経験: インターンでのアプリ開発" },
-      { name: "LSTM(Long Short-Term Memory)", experience: "研究で使用" },
+      { name: "Gemini API", experience: "実務: マルチモーダル生成・画像生成・検索グラウンディング" },
+      { name: "OpenAI API", experience: "実務: 検索グラウンディングを用いた診断機能" },
+      { name: "PyTorch", experience: "研究: Social-GAN / LSTM による歩行者軌道予測" },
     ],
   },
   {
-    title: "Tools & Others",
+    title: "Infrastructure & Tools",
     skills: [
-      { name: "Git", experience: "基本的な操作は可能" },
-      { name: "Docker", experience: "基本的な操作は可能" },
-      { name: "Linux", experience: "授業での学習、VPSでの使用経験" },
+      { name: "Docker", experience: "実務: 開発・本番環境のコンテナ化" },
+      { name: "Supabase" },
+      { name: "Celery / Redis", experience: "実務: 非同期ジョブ・進捗通知" },
+      { name: "Playwright", experience: "実務: ブラウザ自動操作による無人投稿システム" },
+      { name: "pytest", experience: "研究: 535件のテストで品質担保" },
+      { name: "Git / GitHub" },
+      { name: "Linux (VPS)", experience: "実務: 本番サーバでの運用" },
     ],
   },
-]; 
+];
