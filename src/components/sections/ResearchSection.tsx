@@ -3,25 +3,24 @@ import Section from '../layout/Section';
 import SectionTitle from '../ui/SectionTitle';
 import FadeInWhenVisible from '../ui/FadeInWhenVisible';
 import { researchData, Publication } from '@/data/publications';
-import { FlaskConical, ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 
 // badge のリテラル型をキーにすることで、publications.ts 側のラベル変更時に
 // スタイル未定義がコンパイルエラーとして検出される
 const badgeStyles: Record<Publication['badge'], string> = {
-  '国際会議（査読あり）': 'bg-blue-50 text-blue-700 border border-blue-200',
-  '国内講演会（査読なし）': 'bg-gray-100 text-gray-600 border border-gray-200',
+  '国際会議（査読あり）': 'bg-accent/5 text-accent border border-accent/20',
+  '国内講演会（査読なし）': 'bg-gray-100 text-gray-subtext border border-gray-border',
 };
 
 const ResearchSection = () => {
   return (
     <FadeInWhenVisible>
-      <Section id="research" className="bg-base-white rounded-lg shadow-sm">
+      <Section id="research" className="border-t border-gray-border">
         <SectionTitle>Research</SectionTitle>
 
         <div className="max-w-3xl mx-auto space-y-8">
           <div>
-            <h3 className="flex items-center text-xl font-bold font-montserrat mb-3">
-              <FlaskConical size={20} className="mr-2 text-accent" />
+            <h3 className="text-xl font-bold text-text-dark mb-3">
               {researchData.theme}
             </h3>
             <p className="text-sm leading-relaxed">{researchData.overview}</p>
@@ -39,7 +38,7 @@ const ResearchSection = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-bold font-montserrat mb-4">Publications</h4>
+            <h4 className="text-lg font-bold text-text-dark mb-4">Publications</h4>
             <ul className="space-y-4">
               {researchData.publications.map((pub) => (
                 <li

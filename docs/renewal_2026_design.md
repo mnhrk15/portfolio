@@ -56,3 +56,15 @@
 ### 関連別タスク（本リポジトリ外）
 
 - 研究コード `integrated_path_planning` の GitHub 公開（setup.py の author/URL 修正、指導教員の了解確認）
+
+## 追記: デザインリファイン（2026年8月21日）
+
+コンテンツ更新のデプロイ後、「洗練されたシンプルでモダン」を方針にデザインを刷新した。骨格（セクション構成・レイアウト）は維持（案C: 軽量リファイン）。
+
+- アクセント色: blue-600 `#2563EB` → インクネイビー `#1E3A5F`（1色のみ）
+- フォント: Noto Sans JP + Montserrat → IBM Plex Sans JP + IBM Plex Mono（数字・ラベル用）
+- ゾーニング: 影付き白カードの浮遊 → 白背景一枚 + `border-gray-border` の細罫線区切り。角丸は `rounded-lg` に統一
+- Hero: 方眼グリッドを淡く維持しつつ、実績ハイライト3点（100+サロン / 約10件 / AVEC'26）を追加（`profile.ts` の `heroStats`）
+- 見出しの装飾アイコンを削除（機能的アイコンのみ残す）。OG画像のアクセント色も更新
+
+詳細トークンは `docs/design_specification.md` §4 を参照。

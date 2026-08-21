@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP, Montserrat } from "next/font/google";
+import { IBM_Plex_Sans_JP, IBM_Plex_Mono } from "next/font/google";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
-const noto = Noto_Sans_JP({
+const plexSansJP = IBM_Plex_Sans_JP({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
-  variable: "--font-noto-sans-jp",
+  variable: "--font-plex-sans-jp",
   display: "swap",
 });
 
-const montserrat = Montserrat({
+const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-montserrat",
+  weight: ["400", "500"],
+  variable: "--font-plex-mono",
   display: "swap",
 });
 
@@ -113,7 +113,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${noto.variable} ${montserrat.variable} bg-light-gray font-sans text-text-main antialiased`}
+        className={`${plexSansJP.variable} ${plexMono.variable} bg-base-white font-sans text-text-main antialiased`}
       >
         <Header />
         <main className="pt-16">{children}</main>

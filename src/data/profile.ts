@@ -21,6 +21,18 @@ export interface ProfileData {
   education: string[];
 }
 
+export interface HeroStat {
+  value: string;
+  label: string;
+}
+
+// Heroセクションに表示する実績ハイライト
+export const heroStats: HeroStat[] = [
+  { value: "100+", label: "美容サロンで実利用" },
+  { value: "約10件", label: "開発・運用アプリ" },
+  { value: "AVEC'26", label: "国際会議フルペーパー採択" },
+];
+
 export const profileData: ProfileData = {
   name: {
     japanese: "峯 陽楽",
