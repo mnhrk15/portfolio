@@ -30,6 +30,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://hiraku-portfolio.site",
   },
+  // OG画像・Twitter画像はファイル規約の opengraph-image.tsx（1200x630）が使われるため、ここでは指定しない
   openGraph: {
     type: "website",
     locale: "ja_JP",
@@ -37,20 +38,11 @@ export const metadata: Metadata = {
     siteName: "峯陽楽 ポートフォリオ",
     title: "峯陽楽（Mine Hiraku）| ポートフォリオ",
     description: "峯陽楽（みね ひらく）のポートフォリオサイト。生成AIを活用した業務効率化アプリの開発・運用実績多数。九州工業大学大学院在学中。",
-    images: [
-      {
-        url: "/images/profile.png",
-        width: 1200,
-        height: 630,
-        alt: "峯陽楽のプロフィール写真",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "峯陽楽（Mine Hiraku）| ポートフォリオ",
     description: "峯陽楽（みね ひらく）のポートフォリオサイト。生成AIを活用した業務効率化アプリの開発・運用実績多数。九州工業大学大学院在学中。",
-    images: ["/images/profile.png"],
     creator: "@mnhrk15",
   },
   robots: {

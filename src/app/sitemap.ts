@@ -1,39 +1,14 @@
 import { MetadataRoute } from 'next'
 
+// 1ページ構成のため、エントリはトップのみ。
+// フラグメント付きURL（/#about 等）は検索エンジンが個別ページとして扱わないため掲載しない。
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://hiraku-portfolio.site'
-  
   return [
     {
-      url: baseUrl,
+      url: 'https://hiraku-portfolio.site',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
     },
-    {
-      url: `${baseUrl}#about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}#skills`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}#projects`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}#research`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
   ]
 }
-

@@ -1,7 +1,5 @@
 import { ImageResponse } from 'next/og'
 
-export const runtime = 'edge'
-
 export const alt = '峯陽楽（Mine Hiraku）| ポートフォリオ'
 export const size = {
   width: 1200,
@@ -15,23 +13,22 @@ export default async function Image() {
       <div
         style={{
           fontSize: 60,
-          background: 'linear-gradient(to bottom, #F9FAFB, #E5E7EB)',
+          background: '#FFFFFF',
           width: '100%',
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '40px',
         }}
       >
         <div
           style={{
+            flexGrow: 1,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
             textAlign: 'center',
+            padding: '40px',
           }}
         >
           <div
@@ -73,6 +70,13 @@ export default async function Image() {
             九州工業大学
           </div>
         </div>
+        <div
+          style={{
+            width: '100%',
+            height: '16px',
+            background: '#1E3A5F',
+          }}
+        />
       </div>
     ),
     {
