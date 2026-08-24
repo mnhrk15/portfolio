@@ -14,8 +14,8 @@ const badgeStyles: Record<Publication['badge'], string> = {
 
 const ResearchSection = () => {
   return (
-    <FadeInWhenVisible>
-      <Section id="research" className="border-t border-gray-border">
+    <Section id="research" className="border-t border-gray-border">
+      <FadeInWhenVisible>
         <SectionTitle>Research</SectionTitle>
 
         <div className="max-w-3xl mx-auto space-y-8">
@@ -78,8 +78,8 @@ const ResearchSection = () => {
             </ul>
           </div>
         </div>
-      </Section>
-    </FadeInWhenVisible>
+      </FadeInWhenVisible>
+    </Section>
   );
 };
 

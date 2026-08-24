@@ -68,3 +68,14 @@
 - 見出しの装飾アイコンを削除（機能的アイコンのみ残す）。OG画像のアクセント色も更新
 
 詳細トークンは `docs/design_specification.md` §4 を参照。
+
+## 追記: モーション強化（2026年8月23日）
+
+デザインリファインの骨格を維持したまま、「印象に残る動き」を追加した。設計・実装方針の詳細は
+`docs/motion_design_2026.md` を参照。
+
+- Projects カード → モーダルの共有レイアウト遷移（framer-motion の `layoutId`）
+- Hero: 方眼グリッドのカーソル追従、見出しの文字スクランブル（初回のみ）、実績数字のカウントアップ
+- Lenis によるスムーススクロール、ヘッダーのスクロール進捗バーとアクティブセクション下線
+- 一律の fade-in を `whileInView` ベースへ刷新（`react-intersection-observer` を依存から削除）
+- `prefers-reduced-motion` 対応をサイト全体に追加（従来は 0 件）

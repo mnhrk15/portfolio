@@ -9,8 +9,8 @@ import { profileData } from '@/data/profile';
 
 const AboutSection = () => {
   return (
-    <FadeInWhenVisible>
-      <Section id="about" className="border-t border-gray-border">
+    <Section id="about" className="border-t border-gray-border">
+      <FadeInWhenVisible>
         <SectionTitle>About Me</SectionTitle>
         <div className="grid md:grid-cols-3 gap-8 md:gap-12">
           {/* Left Column: Profile */}
@@ -89,8 +89,8 @@ const AboutSection = () => {
 
           </div>
         </div>
-      </Section>
-    </FadeInWhenVisible>
+      </FadeInWhenVisible>
+    </Section>
   );
 };
 

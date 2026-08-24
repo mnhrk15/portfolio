@@ -1,4 +1,7 @@
+"use client";
+
 import React from 'react';
+import { motion } from 'framer-motion';
 import Modal from '../ui/Modal';
 import ImageSlider from './ImageSlider';
 import { Project } from '@/data/projects';
@@ -6,19 +9,42 @@ import { Button } from '../ui/Button';
 import { ExternalLink, Github } from 'lucide-react';
 
 interface ProjectModalProps {
-  project: Project | null;
-  isOpen: boolean;
+  project: Project;
   onClose: () => void;
 }
 
-const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
-  if (!project) return null;
+const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
+  const titleId = `project-modal-title-${project.id}`;
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} title={project.title}>
+    <Modal
+      onClose={onClose}
+      labelledBy={titleId}
+      header={
+        <h2 id={titleId} className="text-xl font-bold text-text-dark truncate">
+          {project.title}
+        </h2>
+      }
+    >
       <div className="space-y-6">
         {project.screenshots.length > 0 && (
-          <ImageSlider screenshots={project.screenshots} />
+          /* バッジはスライダー枠の外に置く。共有要素である枠の内側に入れると
+             親の projection にネストして位置補正が二重に掛かる */
+          <div className="relative">
+            <ImageSlider
+              screenshots={project.screenshots}
+              frameLayoutId={`project-media-${project.id}`}
+            />
+            {project.badge && (
+              <motion.span
+                layoutId={`project-badge-${project.id}`}
+                style={{ borderRadius: 9999 }}
+                className="absolute top-3 left-3 z-10 bg-accent text-base-white text-xs font-bold px-2.5 py-1"
+              >
+                {project.badge}
+              </motion.span>
+            )}
+          </div>
         )}
 
         <div>
