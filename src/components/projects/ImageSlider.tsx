@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface Screenshot {
@@ -11,9 +12,14 @@ interface Screenshot {
 
 interface ImageSliderProps {
   screenshots: Screenshot[];
+  /**
+   * 共有レイアウト遷移用。プロジェクトカードのサムネイル枠と同じ layoutId を渡すと、
+   * カードの画像枠がそのままこのビューポート枠へ morph する。
+   */
+  frameLayoutId?: string;
 }
 
-const ImageSlider: React.FC<ImageSliderProps> = ({ screenshots }) => {
+const ImageSlider: React.FC<ImageSliderProps> = ({ screenshots, frameLayoutId }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToPrevious = () => {
@@ -38,15 +44,21 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ screenshots }) => {
   
   return (
     <div className="relative w-full">
-      <div className="relative w-full h-96 rounded-lg overflow-hidden mb-4 bg-gray-50 border border-gray-border">
+      {/* 角丸は borderRadius を数値で指定する。Tailwind の rounded-lg だと
+          共有レイアウト遷移中に framer-motion の scale 補正が効かず角丸が歪む */}
+      <motion.div
+        layoutId={frameLayoutId}
+        style={{ borderRadius: 8 }}
+        className="relative w-full h-96 overflow-hidden mb-4 bg-gray-50 border border-gray-border"
+      >
         <Image
           src={screenshots[currentIndex].src}
           alt={screenshots[currentIndex].caption || `Screenshot ${currentIndex + 1}`}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="transition-transform duration-500 ease-in-out object-contain"
+          sizes="(max-width: 768px) 100vw, 896px"
+          className="object-contain"
         />
-      </div>
+      </motion.div>
       
       {/* Navigation Buttons */}
       {screenshots.length > 1 && (

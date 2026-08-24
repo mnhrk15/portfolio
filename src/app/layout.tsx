@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Sans_JP, IBM_Plex_Mono } from "next/font/google";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Header from "@/components/layout/Header";
+import MotionProviders from "@/components/providers/MotionProviders";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
@@ -97,7 +98,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="ja" className="scroll-smooth">
+    <html lang="ja">
       <head>
         <script
           type="application/ld+json"
@@ -107,9 +108,11 @@ export default function RootLayout({
       <body
         className={`${plexSansJP.variable} ${plexMono.variable} bg-base-white font-sans text-text-main antialiased`}
       >
-        <Header />
-        <main className="pt-16">{children}</main>
-        <Footer />
+        <MotionProviders>
+          <Header />
+          <main className="pt-16">{children}</main>
+          <Footer />
+        </MotionProviders>
       </body>
       {process.env.NEXT_PUBLIC_GA_ID && (
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />

@@ -1,9 +1,13 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../ui/Card';
 import { Button } from '../ui/Button';
 import { Project } from '@/data/projects';
 import { ArrowRight, ExternalLink } from 'lucide-react';
+import { staggerItem } from '@/lib/motion';
 
 interface ProjectCardProps {
   project: Project;
@@ -12,9 +16,15 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, onViewDetails }) => {
   return (
-    <Card className="flex flex-col h-full overflow-hidden group">
-      <CardHeader>
-        <div className="relative w-full h-48 mb-4 overflow-hidden rounded-lg bg-gray-50">
+    <Card className="flex flex-col h-full overflow-hidden group" variants={staggerItem}>
+      <CardHeader className="relative">
+        {/* この枠がモーダルのスライダー枠へ morph する。
+            角丸は Tailwind ではなく数値で指定する（scale 補正のため） */}
+        <motion.div
+          layoutId={`project-media-${project.id}`}
+          style={{ borderRadius: 8 }}
+          className="relative w-full h-48 mb-4 overflow-hidden bg-gray-50"
+        >
           <Image
             src={project.mainImage}
             alt={project.title}
@@ -22,12 +32,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onViewDetails }) => 
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
-          {project.badge && (
-            <span className="absolute top-2 left-2 bg-accent text-base-white text-xs font-bold px-2.5 py-1 rounded-full">
-              {project.badge}
-            </span>
-          )}
-        </div>
+        </motion.div>
+        {project.badge && (
+          <motion.span
+            layoutId={`project-badge-${project.id}`}
+            style={{ borderRadius: 9999 }}
+            // CardHeader の p-6 (24px) + 従来の 8px = 32px。画像枠の左上に従来どおり重なる
+            className="absolute top-8 left-8 z-10 bg-accent text-base-white text-xs font-bold px-2.5 py-1"
+          >
+            {project.badge}
+          </motion.span>
+        )}
         <CardTitle className="text-lg text-text-dark">{project.title}</CardTitle>
         <CardDescription className="min-h-10 text-gray-subtext">{project.shortDescription}</CardDescription>
       </CardHeader>

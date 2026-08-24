@@ -22,14 +22,25 @@ export interface ProfileData {
 }
 
 export interface HeroStat {
+  /** 最終的な表示テキスト。SSR・reduced motion 時はこれをそのまま表示する */
   value: string;
   label: string;
+  /**
+   * カウントアップの終着値。省略した場合は演出せず value をそのまま表示する。
+   * "AVEC'26" のように数値ではないハイライトは省略すること
+   * （正規表現でのパースは "'26" を数値として拾ってしまうため、明示指定にしている）。
+   */
+  countTo?: number;
+  /** 数値の前に付く文字（例: "約"） */
+  prefix?: string;
+  /** 数値の後に付く文字（例: "+" / "件"） */
+  suffix?: string;
 }
 
 // Heroセクションに表示する実績ハイライト
 export const heroStats: HeroStat[] = [
-  { value: "100+", label: "美容サロンで実利用" },
-  { value: "約10件", label: "開発・運用アプリ" },
+  { value: "100+", label: "美容サロンで実利用", countTo: 100, suffix: "+" },
+  { value: "約10件", label: "開発・運用アプリ", countTo: 10, prefix: "約", suffix: "件" },
   { value: "AVEC'26", label: "国際会議フルペーパー採択" },
 ];
 

@@ -5,3 +5,28 @@
  * @config で明示的に読み込む（カスタムカラー・フォント定義がここにある）。
  */
 @config "../../tailwind.config.ts";
+
+/*
+ * スクロールバーの表示/非表示によるレイアウトシフトを防ぐ。
+ * モーダル表示中は Lenis が html に overflow: clip を当てるため、
+ * gutter が消える分は Modal 側で padding-right によって補償している。
+ */
+html {
+  scrollbar-gutter: stable;
+}
+
+/*
+ * prefers-reduced-motion の基本対応（純CSSのアニメーション・トランジション向け）。
+ * framer-motion は MotionConfig reducedMotion="user"、Lenis は respectReducedMotion で
+ * それぞれ同じOS設定を読むため、ここでは扱わない。
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

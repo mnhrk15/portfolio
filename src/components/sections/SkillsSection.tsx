@@ -6,8 +6,8 @@ import FadeInWhenVisible from '../ui/FadeInWhenVisible';
 
 const SkillsSection = () => {
   return (
-    <FadeInWhenVisible>
-      <Section id="skills" className="border-t border-gray-border">
+    <Section id="skills" className="border-t border-gray-border">
+      <FadeInWhenVisible>
         <SectionTitle>Skills</SectionTitle>
         <div className="grid md:grid-cols-2 gap-8">
           {skillsData.map((category) => (
@@ -24,8 +24,8 @@ const SkillsSection = () => {
             </div>
           ))}
         </div>
-      </Section>
-    </FadeInWhenVisible>
+      </FadeInWhenVisible>
+    </Section>
   );
 };
 
