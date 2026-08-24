@@ -44,41 +44,50 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ screenshots, frameLayoutId })
   
   return (
     <div className="relative w-full">
-      {/* 角丸は borderRadius を数値で指定する。Tailwind の rounded-lg だと
-          共有レイアウト遷移中に framer-motion の scale 補正が効かず角丸が歪む */}
-      <motion.div
-        layoutId={frameLayoutId}
-        style={{ borderRadius: 8 }}
-        className="relative w-full h-96 overflow-hidden mb-4 bg-gray-50 border border-gray-border"
-      >
-        <Image
-          src={screenshots[currentIndex].src}
-          alt={screenshots[currentIndex].caption || `Screenshot ${currentIndex + 1}`}
-          fill
-          sizes="(max-width: 768px) 100vw, 896px"
-          className="object-contain"
-        />
-      </motion.div>
-      
-      {/* Navigation Buttons */}
-      {screenshots.length > 1 && (
-        <>
-            <button 
-            onClick={goToPrevious}
-            className="absolute top-1/2 left-2 -translate-y-1/2 bg-base-white/90 text-text-main p-2 rounded-full hover:bg-base-white transition-all duration-200 backdrop-blur-sm border border-gray-border"
-            aria-label="前の画像"
+      {/*
+        前後ボタンの位置基準。以前は最も外側の div を基準にしていたため、
+        top-1/2 がキャプション・ドットを含む全体の中央になり、
+        ボタンが画像枠の中心より下にずれていた。
+        なお枠（共有レイアウト要素）の内側には入れない。morph 中に枠へ掛かる
+        scale がボタンにもそのまま乗ってしまうため。
+      */}
+      <div className="relative mb-4">
+        {/* 角丸は borderRadius を数値で指定する。Tailwind の rounded-lg だと
+            共有レイアウト遷移中に framer-motion の scale 補正が効かず角丸が歪む */}
+        <motion.div
+          layoutId={frameLayoutId}
+          style={{ borderRadius: 8 }}
+          className="relative w-full h-96 overflow-hidden bg-gray-50 border border-gray-border"
+        >
+          <Image
+            src={screenshots[currentIndex].src}
+            alt={screenshots[currentIndex].caption || `Screenshot ${currentIndex + 1}`}
+            fill
+            sizes="(max-width: 768px) 100vw, 896px"
+            className="object-contain"
+          />
+        </motion.div>
+
+        {/* Navigation Buttons */}
+        {screenshots.length > 1 && (
+          <>
+            <button
+              onClick={goToPrevious}
+              className="absolute top-1/2 left-2 -translate-y-1/2 bg-base-white/90 text-text-main p-2 rounded-full hover:bg-base-white transition-all duration-200 backdrop-blur-sm border border-gray-border"
+              aria-label="前の画像"
             >
-            <ChevronLeft size={24} />
+              <ChevronLeft size={24} />
             </button>
-            <button 
-            onClick={goToNext}
-            className="absolute top-1/2 right-2 -translate-y-1/2 bg-base-white/90 text-text-main p-2 rounded-full hover:bg-base-white transition-all duration-200 backdrop-blur-sm border border-gray-border"
-            aria-label="次の画像"
+            <button
+              onClick={goToNext}
+              className="absolute top-1/2 right-2 -translate-y-1/2 bg-base-white/90 text-text-main p-2 rounded-full hover:bg-base-white transition-all duration-200 backdrop-blur-sm border border-gray-border"
+              aria-label="次の画像"
             >
-            <ChevronRight size={24} />
+              <ChevronRight size={24} />
             </button>
-        </>
-      )}
+          </>
+        )}
+      </div>
 
       {/* Caption */}
       <div className="text-center px-4 py-3 bg-gray-50 rounded-lg border border-gray-border min-h-[2.5rem] flex items-center justify-center">
