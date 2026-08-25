@@ -1,16 +1,8 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { ArrowDown } from 'lucide-react';
-import {
-  motion,
-  useInView,
-  useMotionValue,
-  useReducedMotion,
-  useSpring,
-  useTransform,
-  type MotionStyle,
-} from 'framer-motion';
+import { motion } from 'framer-motion';
 import Section from '../layout/Section';
 import ScrambleText from '../ui/ScrambleText';
 import CountUp from '../ui/CountUp';
@@ -18,76 +10,34 @@ import { heroStats } from '@/data/profile';
 import { HERO, heroArrow, heroContainer, heroItem } from '@/lib/motion';
 
 /**
- * 方眼グリッドを覆う白いマスク。中心を CSS 変数にしてカーソルへ追従させる。
- * 既存デザインの radial-gradient の「中心」だけを可変にしているため、
- * 追従しない環境ではデフォルト値の 50% が効いて従来と完全に同じ見た目になる。
+ * 方眼グリッドの端をやわらげるフェード。グリッド自体に掛ける（黒=表示 / 透明=非表示）。
+ *
+ * 縦半径を 50% にすることで上下端でちょうど透明になり、次セクションとの境目が
+ * 罫線でぶつ切りにならない。横半径は 65% と広めに取り、左右は完全には消さずに
+ * 中央帯の方眼をしっかり見せる。
  */
-const MASK_IMAGE =
-  'radial-gradient(55% 55% at var(--hero-x, 50%) var(--hero-y, 50%), transparent 15%, black 100%)';
-
-const SPRING_CONFIG = { stiffness: 120, damping: 30, mass: 0.6 } as const;
+const GRID_FADE =
+  'radial-gradient(ellipse 65% 50% at 50% 50%, black 40%, transparent 100%)';
 
 const HeroSection = () => {
-  const maskRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(maskRef, { amount: 0.1 });
-  const shouldReduceMotion = useReducedMotion();
-
-  // 初期値は中央。useSpring を挟むことで光がわずかに遅れて追従する
-  const pointerX = useMotionValue(0.5);
-  const pointerY = useMotionValue(0.5);
-  const springX = useSpring(pointerX, SPRING_CONFIG);
-  const springY = useSpring(pointerY, SPRING_CONFIG);
-  const maskX = useTransform(springX, (v) => `${v * 100}%`);
-  const maskY = useTransform(springY, (v) => `${v * 100}%`);
-
-  useEffect(() => {
-    if (shouldReduceMotion || !isInView) return;
-    // タッチ端末ではリスナーを張らない（CSS変数のデフォルト 50% が効き、従来と同じ見た目になる）
-    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-
-    const handlePointerMove = (event: PointerEvent) => {
-      if (event.pointerType !== 'mouse') return;
-      const el = maskRef.current;
-      if (!el) return;
-      const rect = el.getBoundingClientRect();
-      pointerX.set((event.clientX - rect.left) / rect.width);
-      pointerY.set((event.clientY - rect.top) / rect.height);
-    };
-
-    window.addEventListener('pointermove', handlePointerMove, { passive: true });
-    return () => window.removeEventListener('pointermove', handlePointerMove);
-  }, [isInView, shouldReduceMotion, pointerX, pointerY]);
-
   return (
     <Section
       id="hero"
       className="relative isolate flex items-center justify-center min-h-[calc(100vh-4rem)] pt-0 pb-0 overflow-hidden"
     >
-      {/* Background Grid（罫色はトークンより一段淡い #F1F3F6 を意図的に使用） */}
+      {/* Background Grid（罫色は gray-border トークンと同色。端は GRID_FADE で白へ抜く） */}
       <div
         aria-hidden="true"
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: `
-            linear-gradient(to right, #F1F3F6 1px, transparent 1px),
-            linear-gradient(to bottom, #F1F3F6 1px, transparent 1px)
+            linear-gradient(to right, #E5E7EB 1px, transparent 1px),
+            linear-gradient(to bottom, #E5E7EB 1px, transparent 1px)
           `,
           backgroundSize: '48px 48px',
+          maskImage: GRID_FADE,
+          WebkitMaskImage: GRID_FADE,
         }}
-      />
-      {/* Gradient Mask（カーソル追従） */}
-      <motion.div
-        ref={maskRef}
-        aria-hidden="true"
-        className="absolute inset-0 z-0 bg-base-white"
-        style={
-          {
-            '--hero-x': maskX,
-            '--hero-y': maskY,
-            maskImage: MASK_IMAGE,
-            WebkitMaskImage: MASK_IMAGE,
-          } as unknown as MotionStyle
-        }
       />
 
       {/* Content */}
