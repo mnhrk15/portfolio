@@ -30,7 +30,7 @@
 |---|---|
 | framer-motion の宣言的アニメーション | `MotionProviders` の `<MotionConfig reducedMotion="user">` 1箇所。transform / layout が無効化され、opacity は残る |
 | Lenis（スクロール入力） | `respectReducedMotion: true`。慣性なしの即時スクロールにフォールバック |
-| 自前 JS 演出（ScrambleText / CountUp / Hero のマスク追従） | 各コンポーネントで `useReducedMotion()` を呼び、演出自体をスキップ |
+| 自前 JS 演出（ScrambleText / CountUp） | 各コンポーネントで `useReducedMotion()` を呼び、演出自体をスキップ |
 | 純 CSS のアニメーション | `motion-safe:animate-bounce`、`globals.css` の reduce ブロック |
 
 **やってはいけないこと**: `useReducedMotion()` の結果を props で Lenis に渡して
@@ -117,11 +117,12 @@ DOM 順に居る）構成のため、**Tab のトラップが必須**になる�
 
 ### Hero
 
-- **カーソル追従グリッド**: 既存の `radial-gradient` の**中心だけ**を CSS 変数 `--hero-x/--hero-y` にする。
-  `useMotionValue` → `useSpring` → `useTransform` で更新するため自前の rAF スロットルは不要
-  （Motion が内部で rAF バッチ処理する）。光がわずかに遅れて追う減衰も同時に得られる。
-  タッチ端末（`matchMedia('(hover: hover) and (pointer: fine)')` が false）ではリスナーを張らず、
-  CSS 変数のデフォルト `50%` が効いて従来と完全に同じ見た目になる
+- **方眼グリッド**（静的・2026年8月25日にカーソル追従を廃止）: 罫色は `gray-border` と同色の `#E5E7EB`。
+  グリッド自体に `radial-gradient(ellipse 65% 50% at 50% 50%, black 40%, transparent 100%)` のマスクを掛け、
+  中央帯はしっかり見せつつ端だけ白へ抜く。縦半径 50% で上下端がちょうど透明になり、
+  次セクションとの境目が罫線でぶつ切りにならない。
+  当初はカーソル追従のスポットライトにしていたが、（1）罫色が淡すぎて変化を知覚できない、
+  （2）ウィンドウを狭めるとスポットライトが画面に対して大きく位置ズレが目立つ、という理由で廃止した
 - **見出しのスクランブル**（初回ロード時のみ）: 置換文字をランダムな英数字にせず、
   **表示対象の文字列自身の並べ替え**に限定するのが要点。IBM Plex Sans JP はプロポーショナルのため、
   無関係な文字に差し替えると行幅が毎フレーム変わり、モバイルでは折り返し位置まで動く。
@@ -161,7 +162,7 @@ DOM 順に居る）構成のため、**Tab のトラップが必須**になる�
 3. モーダル内を下までスクロールしてから閉じる（`layoutScroll` の検証）
 4. 375px 幅で h1 のスクランブル中に折り返し位置が動かないか
 5. DevTools > Rendering > Emulate `prefers-reduced-motion: reduce` で、
-   慣性・スクランブル・カウントアップ・マスク追従・morph がすべて止まるか
+   慣性・スクランブル・カウントアップ・morph がすべて止まるか
 6. Console にハイドレーション警告（`Text content did not match`）が出ていないか
 7. ナビクリック後に `document.getElementById('about').getBoundingClientRect().top === 64` になるか
 8. モバイルメニューからの遷移でメニューが閉じ、かつスクロールが実行されるか

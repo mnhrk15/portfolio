@@ -32,7 +32,7 @@
 ## セクション構成（1ページ構成を維持）
 
 1. **Hero** — キャッチコピーを上記の軸に刷新
-2. **About** — 修士課程・インターン記述の最新化（2023年3月〜3年以上継続、約10アプリ開発、うち3件が100サロン以上で実利用、インターン生6名のまとめ役・採用担当）。資格記載は維持（基本情報 2022/5、応用情報 2024/12、TOEIC 755 取得時期併記）
+2. **About** — 修士課程・インターン記述の最新化（2023年3月〜3年以上継続、10アプリ以上開発、うち3件が100サロン以上で実利用、インターン生6名のまとめ役・採用担当）。資格記載は維持（基本情報 2022/5、応用情報 2024/12、TOEIC 755 取得時期併記）
 3. **Skills** — 全面刷新。「AI駆動開発（Claude Code / Cursor / Codex）」をカテゴリとして明示。実務スタック（Python: FastAPI・Django / TypeScript: Next.js / Supabase / Playwright / Gemini・OpenAI API / Celery・Redis / Docker / PyTorch）に入れ替え。細かいライブラリ列挙（Tqdm等）は廃止
 4. **Projects** — 上記6件。「課題 / 解決 / 成果 / 技術的な工夫」構成。文面はアンケート問7（裏取り済み）を流用・調整
 5. **Research & Publications（新設）** — 研究概要＋書誌情報:
@@ -64,7 +64,7 @@
 - アクセント色: blue-600 `#2563EB` → インクネイビー `#1E3A5F`（1色のみ）
 - フォント: Noto Sans JP + Montserrat → IBM Plex Sans JP + IBM Plex Mono（数字・ラベル用）
 - ゾーニング: 影付き白カードの浮遊 → 白背景一枚 + `border-gray-border` の細罫線区切り。角丸は `rounded-lg` に統一
-- Hero: 方眼グリッドを淡く維持しつつ、実績ハイライト3点（100+サロン / 約10件 / AVEC'26）を追加（`profile.ts` の `heroStats`）
+- Hero: 方眼グリッドを淡く維持しつつ、実績ハイライト3点（100+サロン / 10+アプリ / AVEC'26）を追加（`profile.ts` の `heroStats`）
 - 見出しの装飾アイコンを削除（機能的アイコンのみ残す）。OG画像のアクセント色も更新
 
 詳細トークンは `docs/design_specification.md` §4 を参照。
@@ -75,7 +75,7 @@
 `docs/motion_design_2026.md` を参照。
 
 - Projects カード → モーダルの共有レイアウト遷移（framer-motion の `layoutId`）
-- Hero: 方眼グリッドのカーソル追従、見出しの文字スクランブル（初回のみ）、実績数字のカウントアップ
+- Hero: 見出しの文字スクランブル（初回のみ）、実績数字のカウントアップ（方眼グリッドのカーソル追従は 2026年8月25日に廃止し静的表示へ）
 - Lenis によるスムーススクロール、ヘッダーのスクロール進捗バーとアクティブセクション下線
 - 一律の fade-in を `whileInView` ベースへ刷新（`react-intersection-observer` を依存から削除）
 - `prefers-reduced-motion` 対応をサイト全体に追加（従来は 0 件）
