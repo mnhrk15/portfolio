@@ -14,7 +14,7 @@
 | 掲載プロジェクト | 企業アプリ5件＋研究基盤1件の計6件（旧6件は全て入れ替え） |
 | スクリーンショット | 掲載OK。ローカル起動・デモデータで撮影（実名等はモザイク配慮） |
 | 研究コード | GitHub公開してURL掲載（公開作業は別タスク: setup.py修正＋指導教員了解） |
-| 公開タイミング | 完成次第すぐ。AVEC'26は「フルペーパー採択済み・2026年9月発表予定」表記 |
+| 公開タイミング | 完成次第すぐ。AVEC'26は「アブストラクト採択・フルペーパー提出済み・2026年9月10日発表予定」表記 |
 | デザイン刷新範囲 | 現デザインの骨格維持＋セクション新設＋コンテンツ全面更新 |
 | 内定先企業名 | サイトには記載しない（汎用性・プライバシー） |
 
@@ -37,7 +37,7 @@
 4. **Projects** — 上記6件。「課題 / 解決 / 成果 / 技術的な工夫」構成。文面はアンケート問7（裏取り済み）を流用・調整
 5. **Research & Publications（新設）** — 研究概要＋書誌情報:
    - 峯 陽楽, 楊 波「歩行者との相互作用を考慮した自動運転経路計画手法の提案と基礎検証」ROBOMECH2026 in Fukuoka, 2026年6月30日, ポスター発表（発表済み）
-   - Hiraku MINE, Bo YANG "Evaluation of Deep Learning-Based Trajectory Prediction for Autonomous Path Planning Considering Pedestrian Interactions", AVEC'26, 2026年9月7–11日つくば（フルペーパー採択済み・発表予定 → 発表後に「発表済み」へ更新）
+   - Hiraku MINE, Bo YANG "Evaluation of Deep Learning-Based Trajectory Prediction for Autonomous Path Planning Considering Pedestrian Interactions", AVEC'26, 2026年9月7–11日つくば（アブストラクト採択・フルペーパー提出済み・9月10日発表予定 → 発表後に「発表済み」へ更新）
 6. **Footer / Contact** — 現状維持
 
 ## 実装方針
