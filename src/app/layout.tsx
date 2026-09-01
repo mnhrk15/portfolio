@@ -23,7 +23,7 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://hiraku-portfolio.site"),
   title: "峯陽楽（Mine Hiraku）| ポートフォリオ",
-  description: "峯陽楽（みね ひらく / Mine Hiraku）のポートフォリオサイト。九州工業大学大学院在学中。生成AIを活用した業務効率化アプリを要件定義から開発・運用し、うち3件は100以上の美容サロンで実利用。国際会議AVEC'26フルペーパー採択。基本情報技術者・応用情報技術者保有。",
+  description: "峯陽楽（みね ひらく / Mine Hiraku）のポートフォリオサイト。九州工業大学大学院在学中。生成AIを活用した業務効率化アプリを要件定義から開発・運用し、うち3件は100以上の美容サロンで実利用。国際会議AVEC'26採択・2026年9月発表予定。基本情報技術者・応用情報技術者保有。",
   keywords: ["峯陽楽", "Mine Hiraku", "みね ひらく", "生成AI", "Python開発者", "九州工業大学", "ポートフォリオ", "AI駆動開発", "Google Gemini API", "Next.js", "FastAPI", "基本情報技術者", "応用情報技術者"],
   authors: [{ name: "峯陽楽", url: "https://github.com/mnhrk15" }],
   creator: "峯陽楽",
@@ -94,7 +94,7 @@ export default function RootLayout({
     sameAs: [
       "https://github.com/mnhrk15"
     ],
-    description: "生成AIを活用した業務効率化アプリを要件定義から開発・運用。うち3件は100以上の美容サロンで実利用。国際会議AVEC'26フルペーパー採択。"
+    description: "生成AIを活用した業務効率化アプリを要件定義から開発・運用。うち3件は100以上の美容サロンで実利用。国際会議AVEC'26採択・2026年9月発表予定。"
   };
 
   return (
