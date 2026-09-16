@@ -27,10 +27,10 @@ export const researchData: ResearchData = {
       title:
         "Evaluation of Deep Learning-Based Trajectory Prediction for Autonomous Path Planning Considering Pedestrian Interactions",
       venue: "17th International Symposium on Advanced Vehicle Control (AVEC'26)",
-      date: "2026年9月10日発表予定（つくば・会期9月7日〜11日）",
+      date: "2026年9月10日（つくば・会期9月7日〜11日）",
       format: "フルペーパー",
       badge: "国際会議（査読あり）",
-      status: "アブストラクト採択・フルペーパー提出済み",
+      status: "発表済み",
       url: "https://avec.jsae.or.jp/2026/",
     },
     {

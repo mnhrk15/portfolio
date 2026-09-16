@@ -179,7 +179,7 @@ export const projectsData: Project[] = [
     id: 6,
     title: "自動運転研究用シミュレーション基盤",
     shortDescription:
-      "歩行者軌道予測と経路計画を統合した閉ループシミュレーション基盤。国際会議AVEC'26採択の実験基盤。",
+      "歩行者軌道予測と経路計画を統合した閉ループシミュレーション基盤。国際会議AVEC'26で発表した研究の実験基盤。",
     mainImage: "/images/projects/research-sim_main.png",
     techIcons: ["Python", "PyTorch", "pysocialforce", "pytest"],
     description:
@@ -193,14 +193,14 @@ export const projectsData: Project[] = [
     solution:
       "予測→計画→歩行者の反応までのループを閉じたシミュレーション基盤を自作し、3つの予測手法を統一指標で比較評価できるようにしました。",
     result:
-      "本基盤による研究成果が国際会議AVEC'26にアブストラクト採択・フルペーパー提出済み（ROBOMECH2026でもポスター発表）。",
+      "本基盤による研究成果を国際会議AVEC'26（2026年9月・つくば）で発表しました（ROBOMECH2026でもポスター発表）。",
     highlights: [
       "予測の不確実性（20サンプル）を考慮したchance-constrained衝突判定",
       "3状態のフェイルセーフ状態機械による安全停止設計",
       "衝突判定のベクトル化により、数百障害物の環境でも1ステップ約0.06msで判定",
       "pytest 535件のテストで、研究コードでも品質・再現性を担保",
     ],
-    badge: "国際会議AVEC'26採択",
+    badge: "国際会議AVEC'26発表",
     period: "2025年12月〜現在",
     techStack: ["Python", "PyTorch", "pysocialforce", "NumPy", "pytest"],
     repoUrl: "https://github.com/mnhrk15/integrated_path_planning",
